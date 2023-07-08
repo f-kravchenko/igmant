@@ -1,37 +1,17 @@
 import React from 'react';
+import './index.scss';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import Navbar from "./components/Navbar";
-import Body from "./components/Body";
-import Background from "./images/repair.svg";
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-    },
-]);
-
-let backgroundStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center'
-}
+import App from "./components/App";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
-      <div style={backgroundStyle}>
-          <Navbar />
-          <Body />
-      </div>
-  </React.StrictMode>
+    <React.StrictMode>
+        <Router>
+            <App />
+        </Router>
+    </React.StrictMode>
 );
